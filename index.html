@@ -6,103 +6,225 @@
   <title>Clearvolt Ltd</title>
   
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            darkgreen: '#0c9444',
+            lightgreen: '#21a145',
+            turquoise: '#00A599',
+            darkgrey: '#353535'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="custom.css">
-  <script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"></script>
-  <script src="app.js"></script>
 </head>
-<body>
-  <header>
+<body class="bg-darkgreen">
+  <div class="fixed progress z-50 left-0 bottom-0 h-2 w-screen bg-turquoise"></div>
+  <header class="absolute w-screen z-50 flex gap-8 justify-between items-center align-center w-screen py-8 px-8">
     <a href="index.html" class="logo">
-      <img src="img/clearvolt-logo.png" alt="Clearvolt Ltd">
+      <img class="w-12 aspect-[259/310]" src="img/clearvolt-logo.png" alt="Clearvolt Ltd">
     </a>
-    <nav>
-      <ul>
+    <nav class="relative text-white uppercase">
+      <ul class="flex gap-8 items-center main-navigation">
         <li>
-          <a href="#">About Us</a>
+          <a class="" href="#">About Us</a>
         </li>
         <li>
-          <a href="#">Go Green</a>
+          <a class="" href="#">Go Green</a>
         </li>
         <li>
-          <a href="#">FAQ</a>
+          <a class="" href="#">FAQ</a>
         </li>
         <li>
-          <a href="#">Blog</a>
+          <a class="" href="#">Blog</a>
         </li>
         <li>
-          <a href="#">Contact</a>
+          <a href="#" class="button transition font-bold transform-gpu px-5 py-2 bg-white text-black rounded-full shadow-2xl uppercase text-sm scale-100 hover:scale-105 hover:text-white hover:bg-turquoise">Get in touch</a>
         </li>
       </ul>
     </nav>
   </header>
   <main>
-    <section class="hero"></section>
-    <section class="benefits"></section>
-    <section class="process"></section>
-    <section class="nutshell"></section>
-    <section class="blog"></section>
-  </main>
-  <footer class="w-screen">
-    <div class="bg-black text-white p-8 pt-12">
-      <div class="flex footer-content m-auto gap-12 max-w-screen-lg">
-        <div class="w-3/4">
-          <img class="w-32 aspect-[1214/310] mb-4" src="img/clearvolt-brand.png">
-          <p>53 Portland Street, M1 3LD, Manchester</p>
-          <p class="mb-4">0161 223 3152</p>
-          <p>hello@clearvolt.co.uk</p>
-        </div>
-        <div class="w-1/4">
-          <nav class="footer-nav">
-            <ul>
-              <li>
-                <a href="#">Our Services</a>
-              </li>
-              <li>
-                <a href="#">Company</a>
-              </li>
-              <li>
-                <a href="#">FAQ</a>
-              </li>
-              <li>
-                <a href="#">Blog</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
-              </li>
-            </ul>
-          </nav>
-          <nav class="footer-socials mt-4">
-            <ul class="flex gap-2">
-              <li>
-                <a href="#">
-                  <img class="size-5" src="img/social/facebook.svg" alt="Facebook">
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img class="size-5" src="img/social/instagram.svg" alt="Instagram">
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img class="size-5" src="img/social/linkedin.svg" alt="LinkedIn">
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+    <section class="relative hero bg-white h-screen p-8 flex flex-col items-center justify-center">
+      <div class="hero-blur-bg">
+        <div class="shape shape--1"></div>
+        <div class="shape shape--2"></div>
+        <div class="shape shape--3"></div>
+        <div class="shape shape--4"></div>
       </div>
+      <div class="relative z-10 text-white sm:pr-32 lg:pr-64">
+        <h1 class="js-hero-title text-4xl sm:text-8xl mb-8">Clearvolt</h1>
+        <p class="text-xl sm:text-2xl max-w-3xl">A dedicated team of property experts committed to helping the private and public sector to harness the power of renewable energy.</p>
+        <a class="mt-8 inline-block bg-white text-black px-8 py-3 text-lg shadow-2xl font-bold uppercase rounded-full" href="#">Contact us today</a>
+      </div>
+    </section>
+    <!-- <section class="benefits bg-turquoise h-screen max-h-[800px]">
+      <h2>Explore the benefits of Clearvolt</h2>
+    </section> -->
+    <section class="relative process bg-white">
+      <h2 class="z-10 text-4xl sticky top-32 pt-16 pb-16 pr-16 text-right m-auto max-w-screen-2xl">The Process</h2>
+      <ul class="relative z-10 py-8 pl-32 pr-96 m-auto max-w-screen-2xl">
+        <li class="h-screen max-h-[700px] p-8 relative">
+          <h3 class="text-darkgreen text-5xl absolute -top-8 bottom-0 left-0 m-auto">#001</h3>
+          <div class="flex gap-12 items-center">
+            <img class="w-2/3 rounded-lg" src="https://placehold.co/600x400" />
+            <div class="w-1/3">
+              <p class="text-2xl mb-4">Objectives and impact discussion</p>
+              <p>We engage in a no-obligation discussion to understand your goals and the potential impact of our zero CapEx solar energy solutions.</p>
+            </div>
+          </div>
+        </li>
+        <li class="h-screen max-h-[700px] p-8 relative">
+          <h3 class="text-darkgreen text-5xl absolute -top-8 bottom-0 left-0 m-auto">#002</h3>
+          <div class="flex gap-12 items-center">
+            <img class="w-2/3 rounded-lg" src="https://placehold.co/600x400" />
+            <div class="w-1/3">
+              <p class="text-2xl mb-4">Premises survey for power generation potential</p>
+              <p>Our experts conduct a comprehensive survey of your premises to assess its sustainability and determine the potential for power generation.</p>
+            </div>
+          </div>
+        </li>
+        <li class="h-screen max-h-[700px] p-8 relative">
+          <h3 class="text-darkgreen text-5xl absolute -top-8 bottom-0 left-0 m-auto">#003</h3>
+          <div class="flex gap-12 items-center">
+            <img class="w-2/3 rounded-lg" src="https://placehold.co/600x400" />
+            <div class="w-1/3">
+              <p class="text-2xl mb-4">Agreement for energy supply and consumption</p>
+              <p>Once the assessment is complete, we sign an agreement outlining the terms for the supply and consumption of carbon-free solar energy.</p>
+            </div>
+          </div>
+        </li>
+        <li class="h-screen max-h-[700px] p-8 relative">
+          <h3 class="text-darkgreen text-5xl absolute -top-8 bottom-0 left-0 m-auto">#004</h3>
+          <div class="flex gap-12 items-center">
+            <img class="w-2/3 rounded-lg" src="https://placehold.co/600x400" />
+            <div class="w-1/3">
+              <p class="text-2xl mb-4">Applying for required permissions</p>
+              <p>Clearvolt will handle all of the planning & DNO applications.</p>
+            </div>
+          </div>
+        </li>
+        <li class="h-screen max-h-[700px] p-8 relative">
+          <h3 class="text-darkgreen text-5xl absolute -top-8 bottom-0 left-0 m-auto">#005</h3>
+          <div class="flex gap-12 items-center">
+            <img class="w-2/3 rounded-lg" src="https://placehold.co/600x400" />
+            <div class="w-1/3">
+              <p class="text-2xl mb-4">The scheme is built and installed</p>
+              <p>The array is constructed and installed in an efficient manner by industry experts.</p>
+            </div>
+          </div>
+        </li>
+        <li class="h-screen max-h-[700px] p-8 relative">
+          <h3 class="text-darkgreen text-5xl absolute -top-8 bottom-0 left-0 m-auto">#006</h3>
+          <div class="flex gap-12 items-center">
+            <img class="w-2/3 rounded-lg" src="https://placehold.co/600x400" />
+            <div class="w-1/3">
+              <p class="text-2xl mb-4">The supply of carbon free energy begins</p>
+              <p>You are now a part of the net-zero by 2050 movement whilst saving significant amounts of money on your energy bill.</p>
+            </div>
+          </div>
+        </li>
+      </ul>
       
+    </section>
+    <section class="nutshell bg-darkgreen h-screen max-h-[800px]">
+      <h2>Solar energy in a nutshell...</h2>
+    </section>
+    <section class="blog bg-white h-screen max-h-[800px]">
+      <h2>Latest news</h2>
+      <div class="blog-card">
+        <div class="blog-card-image"></div>
+        <div class="blog-card-content">
+          How Solar Panels Increase Commercial Property Value and Reduce Business Costs
+        </div>
+        <a href="">Read more</a>
+      </div>
+      <div class="blog-card">
+        <div class="blog-card-image"></div>
+        <div class="blog-card-content">
+          Debunking Electric Vehicles Myths
+        </div>
+        <a href="">Read more</a>
+      </div>
+      <div class="blog-card">
+        <div class="blog-card-image"></div>
+        <div class="blog-card-content">
+          How European Royals, Including Britain’s King Charles, Lead Environmental Initiatives
+        </div>
+        <a href="">Read more</a>
+      </div>
+    </section>
+  </main>
+  <footer class="w-screen bg-black text-white">
+    <div class="flex flex-col sm:flex-row footer-content m-auto sm:gap-12 max-w-screen-lg p-8 pt-12">
+      <div class="sm:w-3/4 mb-8">
+        <img class="w-32 aspect-[1214/310] mb-4" src="img/clearvolt-brand.png">
+        <p>53 Portland Street, M1 3LD, Manchester</p>
+        <p class="mb-4">0161 223 3152</p>
+        <p>hello@clearvolt.co.uk</p>
+      </div>
+      <div class="sm:w-1/4">
+        <nav class="footer-nav">
+          <ul>
+            <li>
+              <a href="#">Our Services</a>
+            </li>
+            <li>
+              <a href="#">Company</a>
+            </li>
+            <li>
+              <a href="#">FAQ</a>
+            </li>
+            <li>
+              <a href="#">Blog</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer-socials mt-4">
+          <ul class="flex gap-2">
+            <li>
+              <a href="#">
+                <img class="size-5" src="img/social/facebook.svg" alt="Facebook">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img class="size-5" src="img/social/instagram.svg" alt="Instagram">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img class="size-5" src="img/social/linkedin.svg" alt="LinkedIn">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
-    <div class="footer-legal bg-gradient-to-r from-darkgreen to-turquoise text-white">
-      <div class="flex flex-col sm:flex-row w-screen max-w-screen-lg gap-12 text-sm m-auto px-8 py-4">
-        <div class="md:w-3/4">
+    <div class="footer-legal bg-gradient-to-r from-lightgreen to-turquoise text-white">
+      <div class="flex flex-col sm:flex-row w-screen max-w-screen-lg sm:gap-12 text-sm m-auto px-8 pt-4 pb-0">
+        <div class="md:w-3/4 mb-4 sm:mb-0">
           <p>Clearvolt Ltd (Company No. 14620210) is registered in England and Wales.</p>
         </div>
         <div class="md:w-1/4 font-bold">
-          <a href="#">Privacy Policy</a>
+          <a href="#">Legal and Privacy</a>
         </div>
       </div>
+      <div class="pt-4 pb-8 px-8 max-w-screen-lg m-auto">
+        <a class="w-full text-xs uppercase opacity-50">Website by Gameful</a>
+      </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
