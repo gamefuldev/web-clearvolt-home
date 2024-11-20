@@ -154,7 +154,9 @@ h1, h2, h3 {
   opacity: 0.1;
 }
 
-.process:after {
+
+.process:after,
+.final:after {
   content: "";
   position: absolute;
   top: 0;
@@ -168,8 +170,23 @@ h1, h2, h3 {
   transition: opacity 0.4s ease;
 }
 
-.process:hover:after {
+.process:hover:after,
+.final:hover:after {
   opacity: 1;
+}
+
+.final:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(img/uk.svg);
+  background-size: 80% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.05;
 }
 
 .benefits .cards:hover .card:not(:hover) {

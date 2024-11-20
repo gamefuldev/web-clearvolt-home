@@ -1,3 +1,44 @@
+const hero = document.querySelector('.hero');
+const icon = document.querySelector('.hero-icon');
+
+// Lerp helper function
+const lerp = (start, end, factor) => start + (end - start) * factor;
+
+let mouseX = 0, mouseY = 0;
+let iconX = 0, iconY = 0;
+let scale = 1;
+
+hero.addEventListener('mousemove', (e) => {
+  const rect = hero.getBoundingClientRect();
+  
+  // Update mouseX and mouseY based on mouse position in hero
+  mouseX = ((e.clientX - rect.left) / rect.width) * 20 - 10; // Range: -10 to 10
+  mouseY = ((e.clientY - rect.top) / rect.height) * 20 - 10; // Range: -10 to 10
+  
+  // Adjust scale based on proximity to the center of the hero
+  const centerX = rect.width / 2;
+  const centerY = rect.height / 2;
+  const distX = Math.abs(e.clientX - (rect.left + centerX));
+  const distY = Math.abs(e.clientY - (rect.top + centerY));
+  const maxDist = Math.sqrt(centerX ** 2 + centerY ** 2); // Diagonal distance
+  
+  // Calculate scale (closer to center -> larger)
+  scale = 1 + (1 - (Math.sqrt(distX ** 2 + distY ** 2) / maxDist)) * 0.1; // Scale up to 1.2
+});
+
+function animateLogo() {
+  // Smoothly interpolate icon position towards the mouse
+  iconX = lerp(iconX, mouseX, 0.1);
+  iconY = lerp(iconY, mouseY, 0.1);
+
+  // Apply the calculated translation and scale
+  icon.style.transform = `translate(${iconX}px, ${iconY}px) scale(${scale})`;
+
+  requestAnimationFrame(animateLogo);
+}
+
+animateLogo();
+
 let currentX = 0; // Tracks the current interpolated x position
 let currentY = 0; // Tracks the current interpolated y position
 let targetX = 0; // Tracks the target x position
@@ -38,7 +79,10 @@ const updateMousePosition = (target) => {
 };
 
 const processArea = document.querySelector(".process");
+const finalArea = document.querySelector(".final");
+
 processArea.onmousemove = e => handleMouseMove(e);
+finalArea.onmousemove = e => handleMouseMove(e);
 
 const { animate, scroll, stagger } = Motion;
 
@@ -143,6 +187,7 @@ document.querySelectorAll("footer > div").forEach((item) => {
 });
 
 let wrapper = document.querySelector(".about-grid");
+
 let columns = Math.floor(wrapper.offsetWidth / 50);
 let rows = Math.floor(wrapper.offsetHeight / 50);
 
@@ -151,9 +196,9 @@ wrapper.style.setProperty("--rows", rows);
 
 const handleTileHover = index => {
   animate(`.tile:nth-child(${index + 1})`, {
-    opacity: [0, 0.1, 0]
+    opacity: [0, 0.2, 0]
   },{
-    duration: 3,
+    duration: 2,
     ease: "ease-in-out"
   });
 };
