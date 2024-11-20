@@ -17,6 +17,20 @@ h1, h2, h3 {
   font-family: Zeroes One, sans-serif;
 }
 
+.font-zeroes {
+  font-family: Zeroes One, sans-serif;
+}
+
+.logo {
+  display: block;
+  filter: none;
+  transition: filter 0.3s ease; /* Smooth transition */
+}
+
+.logo:hover {
+  filter: sepia(1) saturate(10) hue-rotate(30deg);
+}
+
 .main-navigation a {
   position: relative;
   display: inline-block;
@@ -53,7 +67,7 @@ h1, h2, h3 {
   width: 200%;
   height: 200%;
   filter: blur(100px);
-  animation-duration: 45s;
+  animation-duration: 20s;
   animation-name: gradientrotate;
   animation-iteration-count: infinite;
   animation-direction: forwards;
@@ -113,6 +127,22 @@ h1, h2, h3 {
   clip-path: polygon(15% 0, 75% 0%, 100% 50%, 75% 100%, 0 87%);
 }
 
+.about-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);;
+}
+
+.tile {
+  opacity: 0;
+  background-color: #00A599;
+}
+
 .process:before {
   content: "";
   background-image: url(img/img-noise-361x370.png);
@@ -131,7 +161,7 @@ h1, h2, h3 {
   left: 0;
   height: 100%;
   width: 100%;
-  background: radial-gradient(1200px at var(--mouse-x) var(--mouse-y), rgba(0, 165, 153, 0.2), transparent 40%);
+  background: radial-gradient(75vw at var(--mouse-x) var(--mouse-y), rgba(0, 165, 153, 0.3), transparent 40%);
   z-index: 1;
   opacity: 0;
 
@@ -139,5 +169,55 @@ h1, h2, h3 {
 }
 
 .process:hover:after {
+  opacity: 1;
+}
+
+.benefits .cards:hover .card:not(:hover) {
+  transform: scale(0.97);
+}
+
+.benefits .card {
+  position: relative;
+  transform: scale(1);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 50px rgba(0, 165, 153, 0.1);
+  overflow: hidden;
+}
+
+.benefits .card:hover {
+  box-shadow: 0 0 50px rgba(0, 165, 153, 0.7);
+}
+
+.benefits .card i {
+  transition: transform 0.3s ease;
+}
+
+.benefits .card:hover i {
+  transform: scale(1.4);
+}
+
+.benefits .card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(img/img-noise-361x370.png);
+  opacity: 0.05;
+}
+
+.nutshell {
+  position: relative;
+}
+
+.nutshell:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(img/img-noise-361x370.png);
   opacity: 1;
 }
