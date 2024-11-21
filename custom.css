@@ -97,7 +97,7 @@ h1, h2, h3 {
 }
 
 .shape--1 {
-  background: #0c9444;
+  background: rgb(12, 148, 68);
   clip-path: polygon(19% 7%, 4% 39%, 3% 79%, 19% 100%, 68% 97%, 95% 100%, 98% 66%, 100% 27%, 75% 18%, 48% 0%);
   left: -10%;
   top: -15%;
@@ -170,6 +170,10 @@ h1, h2, h3 {
   transition: opacity 0.4s ease;
 }
 
+.final:after {
+  background: radial-gradient(100vw at var(--mouse-x) var(--mouse-y), rgb(12, 148, 68, 0.3), transparent 40%);
+}
+
 .process:hover:after,
 .final:hover:after {
   opacity: 1;
@@ -183,7 +187,7 @@ h1, h2, h3 {
   height: 100%;
   width: 100%;
   background-image: url(img/uk.svg);
-  background-size: 80% auto;
+  background-size: auto 80%;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.05;
