@@ -2,42 +2,42 @@ const hero = document.querySelector('.hero');
 const icon = document.querySelector('.hero-icon');
 
 // Lerp helper function
-const lerp = (start, end, factor) => start + (end - start) * factor;
+// const lerp = (start, end, factor) => start + (end - start) * factor;
 
-let mouseX = 0, mouseY = 0;
-let iconX = 0, iconY = 0;
-let scale = 1;
+// let mouseX = 0, mouseY = 0;
+// let iconX = 0, iconY = 0;
+// let scale = 1;
 
-hero.addEventListener('mousemove', (e) => {
-  const rect = hero.getBoundingClientRect();
+// hero.addEventListener('mousemove', (e) => {
+//   const rect = hero.getBoundingClientRect();
   
-  // Update mouseX and mouseY based on mouse position in hero
-  mouseX = ((e.clientX - rect.left) / rect.width) * 20 - 10; // Range: -10 to 10
-  mouseY = ((e.clientY - rect.top) / rect.height) * 20 - 10; // Range: -10 to 10
+//   // Update mouseX and mouseY based on mouse position in hero
+//   mouseX = ((e.clientX - rect.left) / rect.width) * 20 - 10; // Range: -10 to 10
+//   mouseY = ((e.clientY - rect.top) / rect.height) * 20 - 10; // Range: -10 to 10
   
-  // Adjust scale based on proximity to the center of the hero
-  const centerX = rect.width / 2;
-  const centerY = rect.height / 2;
-  const distX = Math.abs(e.clientX - (rect.left + centerX));
-  const distY = Math.abs(e.clientY - (rect.top + centerY));
-  const maxDist = Math.sqrt(centerX ** 2 + centerY ** 2); // Diagonal distance
+//   // Adjust scale based on proximity to the center of the hero
+//   const centerX = rect.width / 2;
+//   const centerY = rect.height / 2;
+//   const distX = Math.abs(e.clientX - (rect.left + centerX));
+//   const distY = Math.abs(e.clientY - (rect.top + centerY));
+//   const maxDist = Math.sqrt(centerX ** 2 + centerY ** 2); // Diagonal distance
   
-  // Calculate scale (closer to center -> larger)
-  scale = 1 + (1 - (Math.sqrt(distX ** 2 + distY ** 2) / maxDist)) * 0.1; // Scale up to 1.2
-});
+//   // Calculate scale (closer to center -> larger)
+//   scale = 1 + (1 - (Math.sqrt(distX ** 2 + distY ** 2) / maxDist)) * 0.1; // Scale up to 1.2
+// });
 
-function animateLogo() {
-  // Smoothly interpolate icon position towards the mouse
-  iconX = lerp(iconX, mouseX, 0.1);
-  iconY = lerp(iconY, mouseY, 0.1);
+// function animateLogo() {
+//   // Smoothly interpolate icon position towards the mouse
+//   iconX = lerp(iconX, mouseX, 0.1);
+//   iconY = lerp(iconY, mouseY, 0.1);
 
-  // Apply the calculated translation and scale
-  icon.style.transform = `translate(${iconX}px, ${iconY}px) scale(${scale})`;
+//   // Apply the calculated translation and scale
+//   icon.style.transform = `translate(${iconX}px, ${iconY}px) scale(${scale})`;
 
-  requestAnimationFrame(animateLogo);
-}
+//   requestAnimationFrame(animateLogo);
+// }
 
-animateLogo();
+// animateLogo();
 
 let currentX = 0; // Tracks the current interpolated x position
 let currentY = 0; // Tracks the current interpolated y position

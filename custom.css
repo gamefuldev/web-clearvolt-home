@@ -25,10 +25,7 @@ h1, h2, h3 {
   display: block;
   filter: none;
   transition: filter 0.3s ease; /* Smooth transition */
-}
-
-.logo:hover {
-  filter: sepia(1) saturate(10) hue-rotate(30deg);
+  filter: invert(1);
 }
 
 .main-navigation a {
@@ -39,10 +36,10 @@ h1, h2, h3 {
 .main-navigation a:not(.button):after {
   content: "";
   position: absolute;
-  bottom: -8px;
+  bottom: -4px;
   left: 0;
   width: 0%;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #21a145;
   opacity: 0;
   transition: all 0.4s ease;
 }
@@ -52,12 +49,36 @@ h1, h2, h3 {
   opacity: 1;
 }
 
-.hero {
+.hero:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(img/img-noise-361x370.png);
+  opacity: 0.1;
+}
+
+.hero:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  background-image: url(img/img-noise-361x370.png), url(img/soro-6-omfN1pW-n2Y-unsplash-2048x1365.jpg);
-  background-position: top left, center;
-  background-size: auto, cover;
-  background-attachment: fixed, fixed;
+  background-image: url(img/mcfc-photos/2.png);
+  background-position: center;
+  background-size: cover;
+  opacity: 0.25;
+}
+
+@media screen and (min-width: 1024px) {
+  .hero:before {
+    width: 50%;
+    opacity: 1;
+  }
 }
 
 .hero-blur-bg {

@@ -27,17 +27,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="custom.css">
 </head>
-<body class="bg-darkgreen">
+<body>
   <div class="fixed progress z-50 left-0 bottom-0 h-2 w-screen bg-turquoise"></div>
-  <header class="absolute left-0 right-0 w-screen z-50 py-8 px-8">
-    <div class="max-w-screen-xl m-auto flex gap-8 justify-between items-center align-center">
+  <header class="absolute left-0 right-0 w-screen z-50">
+    <div class="max-w-screen-xl m-auto flex gap-8 justify-between items-center align-center p-8">
       <a href="index.html" class="logo">
         <img class="w-12 aspect-[259/310]" src="img/clearvolt-logo.png" alt="Clearvolt Ltd">
       </a>
       <button class="block sm:hidden text-white text-3xl">
         <i class="fi fi-br-menu-burger"></i>
       </button>
-      <nav class="hidden sm:block relative text-white uppercase fixed sm:relative">
+      <nav class="hidden sm:block relative text-black overflow-hidden rounded-full 
+        before:bg-white before:absolute before:top-0 before:left-0 before:w-full before:h-full before:rounded-full 
+        before:opacity-50 before:blur-lg
+        p-2 pl-8 fixed sm:relative">
         <ul class="bg-darkgrey sm:bg-transparent text-2xl sm:text-base pt-32 pb-8 px-16 sm:p-0 fixed sm:relative right-0 sm:right-auto top-0 sm:top-0 h-screen sm:h-auto w-screen sm:w-auto flex flex-col sm:flex-row gap-8 items-center main-navigation">
           <li>
             <a class="" href="#">About Us</a>
@@ -59,19 +62,20 @@
     </div>
   </header>
   <main>
-    <section class="relative hero bg-white h-screen p-8 flex flex-col items-center justify-center">
-      <div class="hero-blur-bg">
+    <section class="relative hero h-screen flex flex-col justify-center bg-white border-b-4 border-turquoise">
+      <!-- <div class="hero-blur-bg">
         <div class="shape shape--1"></div>
         <div class="shape shape--2"></div>
         <div class="shape shape--3"></div>
         <div class="shape shape--4"></div>
+      </div> -->
+      <div class="relative z-10 lg:text-black  w-screen max-w-screen-xl m-auto">
+        <div class="w-1/2 p-8 lg:pr-32">
+          <h1 class="text-darkgreen text-4xl sm:text-8xl mt-8 mb-4">Clearvolt</h1>
+          <p class="text-xl sm:text-2xl max-w-3xl">Powering business with zero capex solar energy solutions.</p>
+          <a class="mt-16 inline-block bg-darkgreen text-white px-8 py-3 text-lg shadow-2xl font-bold uppercase rounded-full hover:scale-105 hover:text-white hover:bg-turquoise transition" href="#">Learn more</a>
+        </div>
       </div>
-      <div class="relative z-10 text-white sm:pr-32 lg:pr-64">
-        <h1 class="js-hero-title text-4xl sm:text-8xl mt-8 mb-4">Clearvolt</h1>
-        <p class="text-xl sm:text-2xl max-w-3xl">Powering business with zero capex solar energy solutions.</p>
-        <a class="mt-16 inline-block bg-white text-black px-8 py-3 text-lg shadow-2xl font-bold uppercase rounded-full hover:scale-105 hover:text-white hover:bg-turquoise transition" href="#">Learn more</a>
-      </div>
-      <img class="hero-icon w-48 aspect-[259/310] absolute bottom-16 right-16 opacity-10 pointer-events-none" src="img/clearvolt-logo.png" alt="Clearvolt Ltd">
     </section>
 
     <section class="about-wrapper h-[300vh] bg-white relative pt-[50vh]">
@@ -152,7 +156,7 @@
         <li class="px-2 py-8 lg:py-16 lg:h-screen lg:max-h-[600px] relative">
           <h3 class="text-darkgreen text-5xl absolute -top-8 bottom-0 left-0 m-auto">#002</h3>
           <div class="flex flex-col lg:flex-row gap-12 items-center">
-            <img class="w-full lg:w-2/3 rounded-lg object-cover h-72" src="img/the-process/inspection.jpg" />
+            <img class="w-full lg:w-2/3 rounded-lg object-cover h-72" src="img/mcfc-photos/15.png" />
             <div class="w-full lg:w-1/3">
               <p class="text-2xl mb-4">Premises survey for power generation potential</p>
               <p>Our experts conduct a comprehensive survey of your premises to assess its sustainability and determine the potential for power generation.</p>
@@ -182,7 +186,7 @@
         <li class="px-2 py-8 lg:py-16 lg:h-screen lg:max-h-[600px] relative">
           <h3 class="text-darkgreen text-5xl absolute -top-8 bottom-0 left-0 m-auto">#005</h3>
           <div class="flex flex-col lg:flex-row gap-12 items-center">
-            <img class="w-full lg:w-2/3 rounded-lg object-cover h-72" src="img/the-process/installation.jpg" />
+            <img class="w-full lg:w-2/3 rounded-lg object-cover h-72" src="img/mcfc-photos/16.png" />
             <div class="w-full lg:w-1/3">
               <p class="text-2xl mb-4">The scheme is built and installed</p>
               <p>The array is constructed and installed in an efficient manner by industry experts.</p>
